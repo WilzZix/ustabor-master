@@ -19,11 +19,17 @@ class _MasterCatalogPageState extends State<MasterCatalogPage> {
     return Scaffold(
       body: SafeArea(
         child: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(
-              child: SvgPicture.asset(
-                'assets/images/Back-mob.svg',
-                alignment: Alignment.centerLeft,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: SvgPicture.asset(
+                  'assets/images/Back-mob.svg',
+                  alignment: Alignment.centerLeft,
+                ),
               ),
             ),
             const HeaderWidget(),
@@ -33,8 +39,7 @@ class _MasterCatalogPageState extends State<MasterCatalogPage> {
               ),
             ),
             TabBarWidget(),
-
-            InformationTabWidget(),
+            const InformationTabWidget(),
             SliverToBoxAdapter(
               child: SizedBox(
                 height: 16.h,

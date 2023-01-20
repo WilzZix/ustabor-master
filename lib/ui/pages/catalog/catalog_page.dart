@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:usta_bor_app/ui/pages/master_catalog_page/master_catalog_page.dart';
 
 class CatalogPage extends StatefulWidget {
   const CatalogPage({Key? key}) : super(key: key);
@@ -13,44 +14,57 @@ class _CatalogPageState extends State<CatalogPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                const AppBarWidget(),
-                SizedBox(
-                  height: 24.h,
-                ),
-                const HeaderWidget(),
-                SizedBox(
-                  height: 16.h,
-                ),
-                const AdsItem(),
-                SizedBox(
-                  height: 16.h,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.2),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset:
-                              const Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(10.r),
-                      color: Colors.white),
-                  child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-                    child: Column(
-                      children: [
-                        Row(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 40.h,
+              ),
+              const AppBarWidget(),
+              SizedBox(
+                height: 24.h,
+              ),
+              const HeaderWidget(),
+              SizedBox(
+                height: 16.h,
+              ),
+              const AdsItem(),
+              SizedBox(
+                height: 16.h,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.2),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset:
+                            const Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(10.r),
+                    color: Colors.white),
+                child: Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        behavior: HitTestBehavior.opaque,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const MasterCatalogPage(),
+                            ),
+                          );
+                        },
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
@@ -209,219 +223,219 @@ class _CatalogPageState extends State<CatalogPage> {
                             )
                           ],
                         ),
-                        SizedBox(
-                          height: 16.h,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              height: 32.h,
-                              width: 89.w,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFF2F2F2),
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.circular(8.r),
-                              ),
-                              child: const Center(
-                                child: Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Text(
-                                    'Сантехники',
-                                    style: TextStyle(color: Color(0xFF4A4A4A)),
-                                  ),
-                                ),
-                              ),
+                      ),
+                      SizedBox(
+                        height: 16.h,
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            height: 32.h,
+                            width: 89.w,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFF2F2F2),
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(8.r),
                             ),
-                            SizedBox(
-                              width: 8.w,
-                            ),
-                            Container(
-                              height: 32.h,
-                              width: 121.w,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFF2F2F2),
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.circular(8.r),
-                              ),
-                              child: const Padding(
+                            child: const Center(
+                              child: Padding(
                                 padding: EdgeInsets.all(8.0),
                                 child: Text(
-                                  'Ванные комнаты',
-                                  textAlign: TextAlign.center,
+                                  'Сантехники',
                                   style: TextStyle(color: Color(0xFF4A4A4A)),
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              width: 8.w,
-                            ),
-                            Container(
-                              height: 32.h,
-                              width: 84.w,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFF2F2F2),
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.circular(8.r),
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Отопление',
-                                  style: TextStyle(color: Color(0xFF4A4A4A)),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 16.h,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              'Выравнивание стен',
-                              style: TextStyle(
-                                  fontFamily: 'Open Sans',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                            SizedBox(
-                              width: 4.w,
-                            ),
-                            const Text('_ _ _ _ _ _ _ _ _'),
-                            SizedBox(
-                              width: 4.w,
-                            ),
-                            Text(
-                              'от 30 000 сўм',
-                              style: TextStyle(
-                                  fontFamily: 'Open Sans',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 8.h,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              'Выравнивание стен',
-                              style: TextStyle(
-                                  fontFamily: 'Open Sans',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                            SizedBox(
-                              width: 4.w,
-                            ),
-                            const Text('_ _ _ _ _ _ _ _ _'),
-                            SizedBox(
-                              width: 4.w,
-                            ),
-                            Text(
-                              'от 30 000 сўм',
-                              style: TextStyle(
-                                  fontFamily: 'Open Sans',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 8.h,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              'Выравнивание стен',
-                              style: TextStyle(
-                                  fontFamily: 'Open Sans',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                            SizedBox(
-                              width: 4.w,
-                            ),
-                            const Text('_ _ _ _ _ _ _ _ _'),
-                            SizedBox(
-                              width: 4.w,
-                            ),
-                            Text(
-                              'от 30 000 сўм',
-                              style: TextStyle(
-                                  fontFamily: 'Open Sans',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 24.h,
-                        ),
-                        Container(
-                          height: 64.h,
-                          child: ListView(
-                            scrollDirection: Axis.horizontal,
-                            children: [
-                              Container(
-                                width: 96.w,
-                                height: 64.h,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.rectangle,
-                                  borderRadius: BorderRadius.circular(6.r),
-                                ),
-                                child: Image.asset('assets/images/therd.png'),
-                              ),
-                              SizedBox(
-                                width: 8.w,
-                              ),
-                              Container(
-                                width: 96.w,
-                                height: 64.h,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.rectangle,
-                                  borderRadius: BorderRadius.circular(6.r),
-                                ),
-                                child: Image.asset('assets/images/therd.png'),
-                              ),
-                              SizedBox(
-                                width: 8.w,
-                              ),
-                              Container(
-                                width: 96.w,
-                                height: 64.h,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.rectangle,
-                                  borderRadius: BorderRadius.circular(6.r),
-                                ),
-                                child: Image.asset('assets/images/therd.png'),
-                              ),
-                              SizedBox(
-                                width: 8.w,
-                              ),
-                              Container(
-                                width: 96.w,
-                                height: 64.h,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.rectangle,
-                                  borderRadius: BorderRadius.circular(6.r),
-                                ),
-                                child: Image.asset('assets/images/therd.png'),
-                              ),
-                              SizedBox(
-                                width: 8.w,
-                              ),
-                            ],
                           ),
-                        )
-                      ],
-                    ),
+                          SizedBox(
+                            width: 8.w,
+                          ),
+                          Container(
+                            height: 32.h,
+                            width: 121.w,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFF2F2F2),
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text(
+                                'Ванные комнаты',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: Color(0xFF4A4A4A)),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 8.w,
+                          ),
+                          Container(
+                            height: 32.h,
+                            width: 84.w,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFF2F2F2),
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text(
+                                'Отопление',
+                                style: TextStyle(color: Color(0xFF4A4A4A)),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 16.h,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Выравнивание стен',
+                            style: TextStyle(
+                                fontFamily: 'Open Sans',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          SizedBox(
+                            width: 4.w,
+                          ),
+                          const Text('_ _ _ _ _ _ _ _ _'),
+                          SizedBox(
+                            width: 4.w,
+                          ),
+                          Text(
+                            'от 30 000 сўм',
+                            style: TextStyle(
+                                fontFamily: 'Open Sans',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 8.h,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Выравнивание стен',
+                            style: TextStyle(
+                                fontFamily: 'Open Sans',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          SizedBox(
+                            width: 4.w,
+                          ),
+                          const Text('_ _ _ _ _ _ _ _ _'),
+                          SizedBox(
+                            width: 4.w,
+                          ),
+                          Text(
+                            'от 30 000 сўм',
+                            style: TextStyle(
+                                fontFamily: 'Open Sans',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 8.h,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Выравнивание стен',
+                            style: TextStyle(
+                                fontFamily: 'Open Sans',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          SizedBox(
+                            width: 4.w,
+                          ),
+                          const Text('_ _ _ _ _ _ _ _ _'),
+                          SizedBox(
+                            width: 4.w,
+                          ),
+                          Text(
+                            'от 30 000 сўм',
+                            style: TextStyle(
+                                fontFamily: 'Open Sans',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 24.h,
+                      ),
+                      Container(
+                        height: 64.h,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            Container(
+                              width: 96.w,
+                              height: 64.h,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                borderRadius: BorderRadius.circular(6.r),
+                              ),
+                              child: Image.asset('assets/images/therd.png'),
+                            ),
+                            SizedBox(
+                              width: 8.w,
+                            ),
+                            Container(
+                              width: 96.w,
+                              height: 64.h,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                borderRadius: BorderRadius.circular(6.r),
+                              ),
+                              child: Image.asset('assets/images/therd.png'),
+                            ),
+                            SizedBox(
+                              width: 8.w,
+                            ),
+                            Container(
+                              width: 96.w,
+                              height: 64.h,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                borderRadius: BorderRadius.circular(6.r),
+                              ),
+                              child: Image.asset('assets/images/therd.png'),
+                            ),
+                            SizedBox(
+                              width: 8.w,
+                            ),
+                            Container(
+                              width: 96.w,
+                              height: 64.h,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                borderRadius: BorderRadius.circular(6.r),
+                              ),
+                              child: Image.asset('assets/images/therd.png'),
+                            ),
+                            SizedBox(
+                              width: 8.w,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
         ),
       ),
@@ -610,13 +624,9 @@ class AppBarWidget extends StatelessWidget {
                                       0, 3), // changes position of shadow
                                 ),
                               ], shape: BoxShape.circle, color: Colors.white),
-                              child: Padding(
-                                padding: const EdgeInsets.all(13.0),
-                                child: SvgPicture.asset(
-                                  'assets/images/close.svg',
-                                  height: 20.h,
-                                  width: 20.h,
-                                ),
+                              child: Icon(
+                                Icons.close,
+                                size: 20.w,
                               ),
                             ),
                           ],
@@ -1171,6 +1181,8 @@ class AppBarWidget extends StatelessWidget {
           child: TextField(
             decoration: InputDecoration(
               border: InputBorder.none,
+              contentPadding:
+                  EdgeInsets.symmetric(vertical: 12.w, horizontal: 16.w),
               hintText: 'Быстрый поиск',
               suffixIcon: Padding(
                 padding: const EdgeInsets.all(4.0),

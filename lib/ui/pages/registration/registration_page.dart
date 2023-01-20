@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:usta_bor_app/pages/catalog/catalog_page.dart';
+
+import '../catalog/catalog_page.dart';
 
 class RegistrationPage extends StatelessWidget {
   const RegistrationPage({Key? key}) : super(key: key);

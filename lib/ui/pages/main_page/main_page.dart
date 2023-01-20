@@ -2,7 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:usta_bor_app/pages/catalog/catalog_page.dart';
+
+import '../catalog/catalog_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -20,66 +21,7 @@ class _MainPageState extends State<MainPage> {
     return SafeArea(
       child: Scaffold(
         body: pages[pageIndex],
-        bottomNavigationBar: Container(
-          height: 60,
-          width: double.infinity,
-          child: Row(
-            children: [
-              Expanded(
-                child: CustomBottomNavBarItem(
-                  isActive: pageIndex == 0,
-                  activeIcon: 'assets/images/ic_personal.svg',
-                  icon: 'assets/images/ic_personal.svg',
-                  label: 'Кабинет',
-                  onPressed: () {
-                    setState(() {
-                      pageIndex = 0;
-                    });
-                  },
-                ),
-              ),
-              Expanded(
-                child: CustomBottomNavBarItem(
-                  isActive: pageIndex == 1,
-                  activeIcon: 'assets/images/ic_zayavki.svg',
-                  icon: 'assets/images/ic_zayavki.svg',
-                  label: 'Мои заявки',
-                  onPressed: () {
-                    setState(() {
-                      pageIndex = 1;
-                    });
-                  },
-                ),
-              ),
-              Expanded(
-                child: CustomBottomNavBarItem(
-                  isActive: pageIndex == 2,
-                  activeIcon: 'assets/images/subtract.svg',
-                  icon: 'assets/images/subtract.svg',
-                  label: "Каталог",
-                  onPressed: () {
-                    setState(() {
-                      pageIndex = 2;
-                    });
-                  },
-                ),
-              ),
-              Expanded(
-                child: CustomBottomNavBarItem(
-                  isActive: pageIndex == 3,
-                  activeIcon: 'assets/images/ic_mastera.svg',
-                  icon: 'assets/images/ic_mastera.svg',
-                  label: 'Меню',
-                  onPressed: () {
-                    setState(() {
-                      pageIndex = 3;
-                    });
-                  },
-                ),
-              ),
-            ],
-          ),
-        ),
+        bottomNavigationBar: const CustomBottomNavigationBar(),
         resizeToAvoidBottomInset: false,
       ),
     );
@@ -108,7 +50,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
     return BottomAppBar(
       elevation: 10,
       color: Colors.white,
-      child: Container(
+      child: SizedBox(
         height: 60,
         width: double.infinity,
         child: Row(
@@ -117,10 +59,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               child: CustomBottomNavBarItem(
                 isActive: _selectedIndex == 0,
                 activeIcon: 'assets/images/ic_personal.svg',
-                icon: 'assets/svg/ic_personal.svg',
+                icon: 'assets/images/ic_personal.svg',
                 label: 'Кабинет',
                 onPressed: () {
-                  _onItemTapped(0);
+                  setState(() {
+                    // _selectedIndex = 0;
+                  });
                 },
               ),
             ),
@@ -128,10 +72,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               child: CustomBottomNavBarItem(
                 isActive: _selectedIndex == 1,
                 activeIcon: 'assets/images/ic_zayavki.svg',
-                icon: 'assets/svg/zayavki.svg',
+                icon: 'assets/images/ic_zayavki.svg',
                 label: 'Мои заявки',
                 onPressed: () {
-                  _onItemTapped(1);
+                  setState(() {
+                    // _selectedIndex = 1;
+                  });
                 },
               ),
             ),
@@ -139,10 +85,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               child: CustomBottomNavBarItem(
                 isActive: _selectedIndex == 2,
                 activeIcon: 'assets/images/subtract.svg',
-                icon: 'assets/svg/catalog.svg',
+                icon: 'assets/images/subtract.svg',
                 label: "Каталог",
                 onPressed: () {
-                  _onItemTapped(2);
+                  setState(() {
+                    // _selectedIndex = 2;
+                  });
                 },
               ),
             ),
@@ -150,10 +98,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               child: CustomBottomNavBarItem(
                 isActive: _selectedIndex == 3,
                 activeIcon: 'assets/images/ic_mastera.svg',
-                icon: 'assets/svg/master.svg',
+                icon: 'assets/images/ic_mastera.svg',
                 label: 'Меню',
                 onPressed: () {
-                  _onItemTapped(3);
+                  setState(() {
+                    // _selectedIndex = 3;
+                  });
                 },
               ),
             ),
