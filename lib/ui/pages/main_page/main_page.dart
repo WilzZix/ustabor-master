@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:usta_bor_app/ui/pages/personal/cabinet_page.dart';
 
 import '../catalog/catalog_page.dart';
 
@@ -15,8 +16,8 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    int pageIndex = 0;
-    final pages = [CatalogPage()];
+    int pageIndex = 1;
+    final pages = [CatalogPage(), CabinetPage()];
 
     return SafeArea(
       child: Scaffold(
@@ -63,7 +64,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 label: 'Кабинет',
                 onPressed: () {
                   setState(() {
-                    // _selectedIndex = 0;
+                    _selectedIndex = 0;
                   });
                 },
               ),
@@ -76,7 +77,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 label: 'Мои заявки',
                 onPressed: () {
                   setState(() {
-                    // _selectedIndex = 1;
+                    _selectedIndex = 1;
                   });
                 },
               ),
