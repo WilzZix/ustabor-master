@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:usta_bor_app/ui/pages/personal/wallet_page.dart/wallet_page_one.dart';
 import 'package:usta_bor_app/ui/pages/personal/wallet_page.dart/wallet_page_two.dart';
 
@@ -34,30 +35,42 @@ class _WalletBasicState extends State<WalletBasic>
       child: Column(
         children: [
           Container(
-            height: 60,
-            width: MediaQuery.of(context).size.height,
+            height: 49.h,
+            width: 343.w,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.grey[200]),
+                borderRadius: BorderRadius.circular(8),
+                color: Color(0xffF9F9f9)),
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(5.0),
+                  padding: const EdgeInsets.only(top: 4, bottom: 4, left: 4),
                   child: TabBar(
+                    
                       indicatorWeight: 2,
                       indicator: BoxDecoration(
                           color: Color(0xffFFFFFFF),
-                          borderRadius: BorderRadius.circular(10)),
-                      unselectedLabelColor: Colors.grey,
-                      labelColor: Colors.black,
+                          borderRadius: BorderRadius.circular(5)),
+                      unselectedLabelColor: Color(0xff4A4A4A).withOpacity(.5),
+                   labelColor: Color(0xff4A4A4A),
+                  // unselectedLabelColor: Colors.red,
                       controller: _tabController,
-                      tabs: const [
+                      tabs: [
                         Tab(
-                          text: 'Пополнение кошелька',
-                        ),
+                            child: Text('Пополнение кошелька',
+                                style: TextStyle(
+                                 //   color: Color(0xff4A4A4A),
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w600))),
                         Tab(
-                          text: 'История транзакций',
-                        )
+                           child: Center(
+                          child: Text('История транзакций',
+                              style: TextStyle(
+                                //  color: Color(0xff4A4A4A),
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w600)),
+                        )),
+                          
+                        
                       ]),
                 )
               ],

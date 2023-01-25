@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:usta_bor_app/ui/pages/personal/promo_page.dart';
+import 'package:usta_bor_app/ui/pages/personal/promo_page/promo_page.dart';
+import 'package:usta_bor_app/ui/pages/personal/reviews.dart';
 import 'package:usta_bor_app/ui/pages/personal/wallet_page.dart/wallet_basic_page.dart';
 import 'package:usta_bor_app/ui/pages/personal/work_page.dart';
-import 'info_page.dart';
+import 'info_page/info_page.dart';
 
 class CabinetPage extends StatefulWidget {
   const CabinetPage({super.key});
@@ -53,7 +54,7 @@ class _CabinetPageState extends State<CabinetPage>
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: SafeArea(
               child: SingleChildScrollView(
                 child: Column(
@@ -255,6 +256,8 @@ class _CabinetPageState extends State<CabinetPage>
                       const PromoPage()
                     else if (selected[0] == 3)
                       const WorkPage()
+                    else if (selected[0] == 4)
+                    ReviewsPage()
                     else
                       const SizedBox()
                   ],

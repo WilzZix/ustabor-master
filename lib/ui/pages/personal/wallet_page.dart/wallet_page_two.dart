@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Second_page extends StatefulWidget {
   const Second_page({
@@ -25,169 +26,220 @@ class _Second_pageState extends State<Second_page>
     return Column(
       children: [
         SizedBox(
-          height: 20,
+          height: 18.5.h,
         ),
         Column(children: [
           TabBar(
-           
-            labelColor: Colors.black,
+            indicatorColor: Color(0xff63C74D),
+            //labelColor: Colors.black,
             controller: tapController,
-            tabs: const [
+            tabs: [
               Tab(
-                text: "Bce",
+                child: Center(
+                    child: Text(
+                  'Bce',
+                  style: TextStyle(
+                      color: Color(0xff4A4A4A),
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400),
+                )),
               ),
               Tab(
-                text: "Платежи",
+                child: Center(
+                    child: Text(
+                  'Платежи',
+                  style: TextStyle(
+                      color: Color(0xff4A4A4A),
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400),
+                )),
               ),
               Tab(
-                text: "Пополнение",
+                child: Center(
+                    child: Text(
+                  'Пополнения',
+                  style: TextStyle(
+                      color: Color(0xff4A4A4A),
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400),
+                )),
               ),
             ],
           ),
           Container(
             height: MediaQuery.of(context).size.height,
             child: TabBarView(controller: tapController, children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 58,
-                            width: 110,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(8),
-                                boxShadow: const [
-                                  BoxShadow(color: Colors.grey, blurRadius: 3)
-                                ]),
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 48.h,
+                          width: 96.w,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Color(0xffE0E0E0)),
+                            //color: Colors.white,
+                            borderRadius: BorderRadius.circular(8),
                           ),
-                          const SizedBox(
-                            width: 16,
-                          ),
-                          Container(
-                            height: 58,
-                            width: 110,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(8),
-                                boxShadow: const [
-                                  BoxShadow(color: Colors.grey, blurRadius: 3)
-                                ]),
-                          ),
-                          const SizedBox(
-                            width: 30,
-                          ),
-                          Container(
-                              height: 58,
-                              width: 130,
+                          child: Center(
+                              child: Text('18.02.2022',
+                                  style: TextStyle(
+                                      color: Color(0xff4A4A4A),
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w400))),
+                        ),
+                        SizedBox(
+                          width: 4.w,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 2.h,
+                              width: 6.w,
                               decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(8),
-                                  boxShadow: const [
-                                    BoxShadow(color: Colors.grey, blurRadius: 3)
-                                  ]),
-                              child: const ExpansionTile(
-                                title: Text("Po date"),
-                              ))
-                        ],
-                      ),
+                                  color: Color(0xffBDBDBD),
+                                  borderRadius: BorderRadius.circular(1)),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: 4.w,
+                        ),
+                        Container(
+                          height: 48.h,
+                          width: 96.w,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Color(0xffE0E0E0)),
+                            //  color: Colors.white,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Center(
+                              child: Text('18.02.2022',
+                                  style: TextStyle(
+                                      color: Color(0xff4A4A4A),
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w400))),
+                        ),
+                        SizedBox(
+                          width: 14.w,
+                        ),
+                        Container(
+                            height: 48.h,
+                            width: 123.w,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Color(0xffE0E0E0)),
+                              //   color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(
+                                  'По дате',
+                                  style: TextStyle(
+                                      color: Color(0xff4A4A4A),
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                                SizedBox(
+                                  width: 31.w,
+                                ),
+                                Icon(
+                                  Icons.arrow_drop_down,
+                                  color: Color(0xff63C74D),
+                                  size: 34.sp,
+                                )
+                              ],
+                            ))
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        height: MediaQuery.of(context).size.height,
-                        child: ListView.builder(
-                            scrollDirection: Axis.vertical,
-                            itemCount: 4,
-                            itemBuilder: ((context, index) {
-                              return Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: Container(
-                                  //  width: 390,
-                                  // height: 100,
-                                  decoration: BoxDecoration(
-                                      color: const Color.fromARGB(
-                                          255, 214, 211, 211),
-                                      borderRadius: BorderRadius.circular(10),
-                                      boxShadow: const [
-                                        BoxShadow(
-                                            color: Colors.white,
-                                            spreadRadius: 1,
-                                            blurRadius: 2)
-                                      ]),
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        children: const [
-                                          Text(
-                                            "Услуги фотографа",
-                                            style: TextStyle(fontSize: 15),
-                                          ),
-                                          SizedBox(
-                                            width: 90,
-                                          ),
-                                          Padding(
-                                            padding: EdgeInsets.only(top: 10),
-                                            child: Text(
-                                              "06:32  Сегодня",
-                                              style: TextStyle(fontSize: 15),
-                                            ),
-                                          )
-                                        ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        itemCount: 4,
+                        itemBuilder: ((context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 16),
+                            child: Container(
+                              width: 343.w,
+                              height: 79.h,
+                              decoration: BoxDecoration(
+                                color: Color(0xffF9F9F9),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children:  [
+                                      SizedBox(height: 10.h, width: 16.w,),
+                                      Text(
+                                        "Услуги фотографа",
+                                        style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
                                       ),
-                                      const SizedBox(
-                                        height: 20,
+                                      SizedBox(
+                                        width: 123.w,
                                       ),
-                                      Row(
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                const EdgeInsets.only(left: 15),
-                                            child: Container(
-                                              height: 18,
-                                              child: const Image(
-                                                  image: NetworkImage(
-                                                      "https://turonbank.uz/bitrix/templates/main/images/cards/payments/payme.png")),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: const [
-                                          Padding(
-                                            padding: EdgeInsets.only(
-                                                left: 140, bottom: 15),
-                                            child: Text("****4456"),
-                                          ),
-                                          SizedBox(
-                                            width: 65,
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsets.only(bottom: 15),
-                                            child: Text("1 200 500",
-                                                style: TextStyle(
-                                                    color: Colors.green,
-                                                    fontSize: 15,
-                                                    fontWeight:
-                                                        FontWeight.w700)),
-                                          )
-                                        ],
+                                      Padding(
+                                        padding: EdgeInsets.only(top: 13),
+                                        child: Text(
+                                          "06:32  Сегодня",
+                                          style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
+                                        ),
                                       )
                                     ],
                                   ),
-                                ),
-                              );
-                            })),
-                      ),
-                    )
-                  ],
-                ),
+                                   SizedBox(
+                                    height: 29.h,
+                                  ),
+                                  Row(
+                                    children: [
+                                      SizedBox(width: 16.w,),
+                                      Container(
+                                        height: 16.h,
+                                        width: 51.w,
+                                        child: const Image(
+                                            image: NetworkImage(
+                                                "https://turonbank.uz/bitrix/templates/main/images/cards/payments/payme.png")),
+                                      ),
+                                      SizedBox(width: 74.w,),
+                                       Text("****4456",
+                                        style: TextStyle(
+                                                color: Color(0xff152B3D),
+                                                fontSize: 12.sp,
+                                                fontWeight: FontWeight.w400)),
+                                      SizedBox(
+                                        width: 61.w,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(bottom: 6),
+                                        child: Text("1 200 500",
+                                            style: TextStyle(
+                                                color: Color(0xff4BB15E),
+                                                fontSize: 14.sp,
+                                                fontWeight: FontWeight.w600)),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: const [
+                                     
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        })),
+                  )
+                ],
               ),
               Container(
                   color: Colors.white54,
