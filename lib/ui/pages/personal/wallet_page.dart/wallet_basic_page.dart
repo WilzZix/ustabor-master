@@ -76,7 +76,7 @@ class _WalletBasicState extends State<WalletBasic>
               ],
             ),
           ),
-          Expanded(
+          Flexible(
               child: TabBarView(
                   controller: _tabController,
                   children: [WalletPageOne(), Second_page()]))

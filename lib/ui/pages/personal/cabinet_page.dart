@@ -50,6 +50,8 @@ class _CabinetPageState extends State<CabinetPage>
     'Ванные комнаты',
   ];
 
+  int index = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +60,7 @@ class _CabinetPageState extends State<CabinetPage>
             child: SafeArea(
               child: SingleChildScrollView(
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
@@ -189,80 +192,175 @@ class _CabinetPageState extends State<CabinetPage>
                       ],
                     ),
                     const SizedBox(height: 20),
-                    Wrap(
-                      direction: Axis.horizontal,
-                      spacing: 3.w,
-                      runSpacing: 3.w,
+                    Row(
                       children: [
-                        for (int i = 0; i < itemsName.length; i++)
-                          OutlinedButton(
-                              style: OutlinedButton.styleFrom(
-                                  // padding: const EdgeInsets.only(
-                                  //     right: 0, left: 14, top: 0, bottom: 0),
-                                  elevation: 5,
-                                  backgroundColor: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8.0)),
-                                  side: BorderSide(
-                                      color: selected.contains(i)
-                                          ? Colors.green
-                                          : Colors.grey)),
-                              onPressed: () {
-                                setState(() {
-                                  selected.clear();
-                                  selected.add(i);
-
-                                  if (selected.contains(i)) {
-                                  } else {}
-                                });
-                              },
-                              child: Container(
-                                height: 40.h,
-                                width: 110.w,
-                                margin: EdgeInsets.symmetric(vertical: 10.h),
-                                child: Center(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      SvgPicture.asset(
-                                        "assets/${svgName[i]}.svg",
-                                        color: selected.contains(i)
-                                            ? Colors.green
-                                            : Colors.grey,
-                                        width: 20.w,
-                                        height: 20.h,
-                                      ),
-                                      SizedBox(width: 10.w),
-                                      Text(
-                                        itemsName[i],
-                                        style: TextStyle(
-                                            fontSize: 12.sp,
-                                            color: selected.contains(i)
-                                                ? Colors.green
-                                                : Colors.grey),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              )),
+                        _card(
+                            title: itemsName[0],
+                            svg: "assets/${svgName[0]}.svg",
+                            onTap: () {
+                              setState(() {
+                                index = 0;
+                              });
+                            },
+                            tapped: index == 0),
+                        const SizedBox(width: 6),
+                        _card(
+                            title: itemsName[1],
+                            svg: "assets/${svgName[1]}.svg",
+                            onTap: () {
+                              setState(() {
+                                index = 1;
+                              });
+                            },
+                            tapped: index == 1),
+                        const SizedBox(width: 6),
+                        _card(
+                            title: itemsName[2],
+                            svg: "assets/${svgName[2]}.svg",
+                            onTap: () {
+                              setState(() {
+                                index = 2;
+                              });
+                            },
+                            tapped: index == 2),
                       ],
                     ),
+                    Row(
+                      children: [
+                        _card(
+                            title: itemsName[3],
+                            svg: "assets/${svgName[3]}.svg",
+                            onTap: () {
+                              setState(() {
+                                index = 3;
+                              });
+                            },
+                            tapped: index == 3),
+                        const SizedBox(width: 6),
+                        _card(
+                            title: itemsName[4],
+                            svg: "assets/${svgName[4]}.svg",
+                            onTap: () {
+                              setState(() {
+                                index = 4;
+                              });
+                            },
+                            tapped: index == 4),
+                        const SizedBox(width: 6),
+                        _card(
+                            title: itemsName[5],
+                            svg: "assets/${svgName[5]}.svg",
+                            onTap: () {
+                              setState(() {
+                                index = 5;
+                              });
+                            },
+                            tapped: index == 5),
+                      ],
+                    ),
+                    // Wrap(
+                    //   direction: Axis.horizontal,
+                    //   spacing: 3.w,
+                    //   runSpacing: 3.w,
+                    //   children: [
+                    //     for (int i = 0; i < itemsName.length; i++)
+                    //       OutlinedButton(
+                    //           style: OutlinedButton.styleFrom(
+                    //               // padding: const EdgeInsets.only(
+                    //               //     right: 0, left: 14, top: 0, bottom: 0),
+                    //               elevation: 5,
+                    //               backgroundColor: Colors.white,
+                    //               shape: RoundedRectangleBorder(
+                    //                   borderRadius: BorderRadius.circular(8.0)),
+                    //               side: BorderSide(
+                    //                   color: selected.contains(i)
+                    //                       ? Colors.green
+                    //                       : Colors.grey)),
+                    //           onPressed: () {
+                    //             setState(() {
+                    //               selected.clear();
+                    //               selected.add(i);
+                    //               if (selected.contains(i)) {
+                    //               } else {}
+                    //             });
+                    //           },
+                    //           child: Container(
+                    //             height: 40.h,
+                    //             width: 110.w,
+                    //             margin: EdgeInsets.symmetric(vertical: 10.h),
+                    //             child: Center(
+                    //               child: Row(
+                    //                 mainAxisAlignment: MainAxisAlignment.start,
+                    //                 children: [
+                    //                   SvgPicture.asset(
+                    //                     "assets/${svgName[i]}.svg",
+                    //                     color: selected.contains(i)
+                    //                         ? Colors.green
+                    //                         : Colors.grey,
+                    //                     width: 20.w,
+                    //                     height: 20.h,
+                    //                   ),
+                    //                   SizedBox(width: 10.w),
+                    //                   Text(
+                    //                     itemsName[i],
+                    //                     style: TextStyle(
+                    //                         fontSize: 12.sp,
+                    //                         color: selected.contains(i)
+                    //                             ? Colors.green
+                    //                             : Colors.grey),
+                    //                   )
+                    //                 ],
+                    //               ),
+                    //             ),
+                    //           )),
+                    //   ],
+                    // ),
                     const SizedBox(height: 14),
-                    if (selected[0] == 0)
-                      const InfoPage()
-                    else if (selected[0] == 1)
-                      const WalletBasic()
-                    else if (selected[0] == 2)
-                      const PromoPage()
-                    else if (selected[0] == 3)
-                      const WorkPage()
-                    else if (selected[0] == 4)
-                    ReviewsPage()
-                    else
-                      const SizedBox()
+                    _widget[index],
                   ],
                 ),
               ),
             )));
+  }
+
+  List<Widget> get _widget => [
+        const InfoPage(),
+        const WalletBasic(),
+        const PromoPage(),
+        const WorkPage(),
+        const ReviewsPage(),
+        const ReviewsPage(),
+      ];
+
+  _card(
+      {required String title,
+      required String svg,
+      required Function() onTap,
+      required bool tapped}) {
+    return Expanded(
+      child: Container(
+        height: 40,
+        padding: EdgeInsets.symmetric(horizontal: 8),
+        margin: EdgeInsets.symmetric(vertical: 6),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: tapped ? Colors.green : Colors.grey)),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(8),
+            child: Row(children: [
+              SvgPicture.asset(svg, color: tapped ? Colors.green : Colors.grey),
+              const SizedBox(width: 10),
+              Text(title,
+                  style: TextStyle(
+                    color: tapped ? Colors.green : Colors.grey,
+                  ))
+            ]),
+          ),
+        ),
+      ),
+    );
   }
 }

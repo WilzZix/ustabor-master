@@ -41,6 +41,7 @@ class _InfoPageState extends State<InfoPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+        
            Text('О мастере:',
               style: TextStyle(
                   color: Colors.black,
@@ -139,12 +140,14 @@ class _InfoPageState extends State<InfoPage> {
            SizedBox(
             height: 22.h,
           ),
+        
           Wrap(
-            direction: Axis.horizontal,
+          direction: Axis.horizontal,
            spacing: 8,
             runSpacing: 8,
             // crossAxisAlignment: WrapCrossAlignment.end,
             // runAlignment: WrapAlignment.spaceBetween,
+
             children: [
               for (int i = 0; i < skilsName.length + 1; i++)
                 i < skilsName.length

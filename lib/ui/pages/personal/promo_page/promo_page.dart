@@ -15,8 +15,8 @@ class _PromoPageState extends State<PromoPage> {
   @override
   Widget build(BuildContext context) {
     return Column(
-       // crossAxisAlignment: CrossAxisAlignment.start,
-       // mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
             height: 24.h,
@@ -26,131 +26,133 @@ class _PromoPageState extends State<PromoPage> {
               showModalBottomSheet(
                   isScrollControlled: true,
                   context: context,
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(8))),
-                  builder: (context) => DraggableScrollableSheet(
-                      expand: false,
-                      builder: ((context, scrollController) {
-                        return SingleChildScrollView(
-                          controller: scrollController,
-                          child: Column(children: [
-                            SizedBox(
-                              height: 8.h,
-                            ),
-                            Container(
-                              width: 32.w,
-                              height: 4.h,
-                              decoration: BoxDecoration(
-                                  color: Color(0xffD8D8D8),
-                                  borderRadius: BorderRadius.circular(2)),
-                            ),
-                            SizedBox(
-                              height: 8.h,
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  'Как привлечь клиентов?',
-                                  style: TextStyle(
-                                      color: Color(0xff4A4A4A),
-                                      fontSize: 20.sp,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                                SizedBox(
-                                  width: 6.w,
-                                ),
-                                InkWell(
-                                  onTap: (() {
-                                    Navigator.pop(context);
-                                  }),
-                                  child: Container(
-                                    height: 40.h,
+                  builder: (context) => SizedBox(
+                    height: 680.h,
+                    child: SingleChildScrollView(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child: Column(children: [
+                              SizedBox(
+                                height: 8.h,
+                              ),
+                              Container(
+                                width: 32.w,
+                                height: 4.h,
+                                decoration: BoxDecoration(
+                                    color: Color(0xffD8D8D8),
+                                    borderRadius: BorderRadius.circular(2)),
+                              ),
+                              SizedBox(
+                                height: 8.h,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
                                     width: 40.w,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xffFFFFFF),
-                                      borderRadius: BorderRadius.circular(100),
-                                    ),
-                                    child: Center(
-                                      child: Icon(
-                                        Icons.clear,
-                                        size: 30,
-                                      ),
-                                    ),
                                   ),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              height: 24.h,
-                            ),
-                            Container(
-                              height: 57.h,
-                              width: 343.w,
-                              decoration: BoxDecoration(
-                                  color: Color(0xff63C74D).withOpacity(.2),
-                                  borderRadius: BorderRadius.circular(6)),
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 8),
-                                child: Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 24),
-                                      child: Image.asset(
-                                        'assets/number.png',
-                                        height: 40.h,
-                                        width: 37.w,
-                                        fit: BoxFit.contain,
+                                  Text(
+                                    'Как привлечь клиентов?',
+                                    style: TextStyle(
+                                        color: Color(0xff4A4A4A),
+                                        fontSize: 20.sp,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                  // SizedBox(
+                                  //   width: 6.w,
+                                  // ),
+                                  InkWell(
+                                    onTap: (() {
+                                      Navigator.pop(context);
+                                    }),
+                                    child: Container(
+                                      height: 40.h,
+                                      width: 40.w,
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xffFFFFFF),
+                                        borderRadius: BorderRadius.circular(100),
+                                      ),
+                                      child: const Center(
+                                        child: Icon(
+                                          Icons.clear,
+                                          size: 30,
+                                        ),
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 20.w,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 8.0),
-                                      child: Text(
-                                        '👍  Качественные фотографии',
-                                        style: TextStyle(
-                                            color: Color(0xff4A4A4A),
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 14.sp),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 24.h,
+                              ),
+                              Container(
+                                height: 57.h,
+                                // width: 343.w,
+                                decoration: BoxDecoration(
+                                    color:
+                                        const Color(0xff63C74D).withOpacity(.2),
+                                    borderRadius: BorderRadius.circular(6)),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 8),
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 24),
+                                        child: Image.asset(
+                                          'assets/number.png',
+                                          height: 40.h,
+                                          width: 37.w,
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
-                                    )
-                                  ],
+                                      SizedBox(
+                                        width: 20.w,
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 8.0),
+                                        child: Text(
+                                          '👍  Качественные фотографии',
+                                          style: TextStyle(
+                                              color: Color(0xff4A4A4A),
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14.sp),
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 16.h,
-                            ),
-                            Container(
-                              height: 231.h,
-                              width: 343.w,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(6)),
-                              child: Image.asset(
-                                'assets/promo_one.png',
-                                fit: BoxFit.contain,
+                              SizedBox(
+                                height: 16.h,
                               ),
-                            ),
-                            SizedBox(
-                              height: 16.h,
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 16),
-                              child: RichText(
+                              Container(
+                                height: 231.h,
+                                // width: 343.w,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(6)),
+                                child: Image.asset(
+                                  'assets/promo_one.png',
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 16.h,
+                              ),
+                              RichText(
                                   text: TextSpan(
                                       style: TextStyle(
                                         fontSize: 14.sp,
                                         color: Color(0xff4A4A4A),
                                       ),
-                                      children: [
+                                      children: const [
                                     TextSpan(
                                       text:
                                           'Загружайте только качественные фотографии, в горизонтальной ориентации, размером не меньше 1000х600 пикселей.',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w400),
+                                      style:
+                                          TextStyle(fontWeight: FontWeight.w400),
                                     ),
                                     TextSpan(
                                         text:
@@ -161,113 +163,119 @@ class _PromoPageState extends State<PromoPage> {
                                           color: Color(0xff63C74D),
                                           fontWeight: FontWeight.w600),
                                     ),
-                                     TextSpan(
+                                    TextSpan(
                                         text:
                                             'Также у вас есть возможность заказать услуги фотографа, который поможет вам сделать качественные фотографии ваших проектов. '),
-
-
                                   ])),
-                            ),
-                            SizedBox(height: 16.h,),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 16),
-                              child: InkWell(
+                              SizedBox(
+                                height: 16.h,
+                              ),
+                              InkWell(
                                 onTap: (() {
                                   setState(() {
                                     isOn = !isOn;
                                   });
                                 }),
                                 child: Row(
-                                            children: [
-                                             isOn? Text('Читать далее',
-                                                  style: TextStyle(
-                                                      color: Color(0xff63C74D), fontWeight: FontWeight.w700, fontSize: 14.sp)):
-                                                      Text('Скрыть все',
-                                                  style: TextStyle(
-                                                      color: Color(0xff63C74D), fontWeight: FontWeight.w700, fontSize: 14.sp)),
-                                              SizedBox(
-                                                width: 13.w,
-                                              ),
-                                              Icon(
-                                              isOn?  Icons.arrow_right_outlined:Icons.arrow_drop_up_outlined,
-                                                size: 20.h,
-                                                color: Color(0xff63C74D).withOpacity(.4),
-                                              )
-                                            ],
-                                          ),
-                                          
-                              ),
-                            ),
-                            SizedBox(height: 24.h,),
-                           ModalSheet(),
-                            SizedBox(height: 48.h,),
-                             Container(
-                              height: 57.h,
-                              width: 343.w,
-                              decoration: BoxDecoration(
-                                  color: Color(0xff63C74D).withOpacity(.2),
-                                  borderRadius: BorderRadius.circular(6)),
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 8),
-                                child: Row(
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 24),
-                                      child: Image.asset(
-                                        'assets/two_number.png',
-                                        height: 40.h,
-                                        width: 37.w,
-                                        fit: BoxFit.contain,
-                                      ),
-                                    ),
+                                    isOn
+                                        ? Text('Читать далее',
+                                            style: TextStyle(
+                                                color: const Color(0xff63C74D),
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 14.sp))
+                                        : Text('Скрыть все',
+                                            style: TextStyle(
+                                                color: Color(0xff63C74D),
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 14.sp)),
                                     SizedBox(
-                                      width: 40.w,
+                                      width: 13.w,
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 8.0),
-                                      child: Text(
-                                        '👍  Продвижение услуг',
-                                        style: TextStyle(
-                                            color: Color(0xff4A4A4A),
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 14.sp),
-                                      ),
+                                    Icon(
+                                      isOn
+                                          ? Icons.arrow_right_outlined
+                                          : Icons.arrow_drop_up_outlined,
+                                      size: 20.h,
+                                      color:
+                                          const Color(0xff63C74D).withOpacity(.4),
                                     )
                                   ],
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 16.h,
-                            ),
-                            Container(
-                              height: 231.h,
-                              width: 343.w,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(6)),
-                              child: Image.asset(
-                                'assets/promo_two.png',
-                                fit: BoxFit.contain,
+                              SizedBox(
+                                height: 24.h,
                               ),
-                            ),
-                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 16,
-                                  vertical: 16),
-                              child: RichText(
+                              ModalSheet(),
+                              SizedBox(
+                                height: 48.h,
+                              ),
+                              Container(
+                                height: 57.h,
+                                //   width: 343.w,
+                                decoration: BoxDecoration(
+                                    color: Color(0xff63C74D).withOpacity(.2),
+                                    borderRadius: BorderRadius.circular(6)),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 8),
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 24),
+                                        child: Image.asset(
+                                          'assets/two_number.png',
+                                          height: 40.h,
+                                          width: 37.w,
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 40.w,
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 8.0),
+                                        child: Text(
+                                          '👍  Продвижение услуг',
+                                          style: TextStyle(
+                                              color: Color(0xff4A4A4A),
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14.sp),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 16.h,
+                              ),
+                              Container(
+                                height: 231.h,
+                                //  width: 343.w,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(6)),
+                                child: Image.asset(
+                                  'assets/promo_two.png',
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 16.h,
+                              ),
+                              RichText(
                                   text: TextSpan(
                                       style: TextStyle(
                                         fontSize: 14.sp,
                                         color: Color(0xff4A4A4A),
                                       ),
-                                      children: [
+                                      children: const [
                                     TextSpan(
                                       text:
                                           'Повышайте свою популярность и делитесь своими работами с аудиторией. Используйте социальные сети для продвижения своих услуг. Более детально про рекламу в соц сетях читайте',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w400),
+                                      style:
+                                          TextStyle(fontWeight: FontWeight.w400),
                                     ),
-                                     TextSpan(
+                                    TextSpan(
                                       text: ' здесь.',
                                       style: TextStyle(
                                           color: Color(0xff63C74D),
@@ -276,15 +284,11 @@ class _PromoPageState extends State<PromoPage> {
                                     TextSpan(
                                         text:
                                             ' Мы можем предложить услуги профессиональных маркетологов для'),
-                                   
-                                   
-
-
                                   ])),
-                            ),
-                          ]),
-                        );
-                      })));
+                            ]),
+                          ),
+                        ),
+                  ));
             }),
             child: Container(
               height: 96.h,
