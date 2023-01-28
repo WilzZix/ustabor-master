@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:usta_bor_app/ui/pages/personal/cabinet_page.dart';
+import 'package:usta_bor_app/ui/pages/personal/menu/person_page.dart';
 
 import '../catalog/catalog_page.dart';
 
@@ -101,7 +102,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 activeIcon: 'assets/images/ic_mastera.svg',
                 icon: 'assets/images/ic_mastera.svg',
                 label: 'Меню',
-                onPressed: () {
+                onPressed: (
+                  ) {
+                    Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const PersonPafe()),
+  );
                   setState(() {
                     // _selectedIndex = 3;
                   });
