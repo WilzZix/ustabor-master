@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:usta_bor_app/ui/pages/main_page/main_page.dart';
 
 import '../catalog/catalog_page.dart';
 
-class RegistrationPage extends StatelessWidget {
-  const RegistrationPage({Key? key}) : super(key: key);
+class RegistrationVerify extends StatefulWidget {
+  const RegistrationVerify({Key? key}) : super(key: key);
 
+  @override
+  State<RegistrationVerify> createState() => _RegistrationVerifyState();
+}
+
+class _RegistrationVerifyState extends State<RegistrationVerify> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +42,7 @@ class RegistrationPage extends StatelessWidget {
                     hintText: 'Имя Фамилия',
                     enabledBorder: OutlineInputBorder(
                       borderSide:
-                          BorderSide(width: 2, color: Color(0xFFE0E0E0)),
+                      BorderSide(width: 2, color: Color(0xFFE0E0E0)),
                     ),
                   ),
                 ),
@@ -50,7 +54,7 @@ class RegistrationPage extends StatelessWidget {
                     hintText: 'Электронная почта',
                     enabledBorder: OutlineInputBorder(
                       borderSide:
-                          BorderSide(width: 2, color: Color(0xFFE0E0E0)),
+                      BorderSide(width: 2, color: Color(0xFFE0E0E0)),
                     ),
                   ),
                 ),
@@ -63,7 +67,7 @@ class RegistrationPage extends StatelessWidget {
                     prefixIcon: Icon(Icons.phone),
                     enabledBorder: OutlineInputBorder(
                       borderSide:
-                          BorderSide(width: 2, color: Color(0xFFE0E0E0)),
+                      BorderSide(width: 2, color: Color(0xFFE0E0E0)),
                     ),
                   ),
                 ),
@@ -75,7 +79,7 @@ class RegistrationPage extends StatelessWidget {
                     hintText: 'Пароль',
                     enabledBorder: OutlineInputBorder(
                       borderSide:
-                          BorderSide(width: 2, color: Color(0xFFE0E0E0)),
+                      BorderSide(width: 2, color: Color(0xFFE0E0E0)),
                     ),
                   ),
                 ),
@@ -87,7 +91,7 @@ class RegistrationPage extends StatelessWidget {
                     hintText: 'Подтвердить пароль',
                     enabledBorder: OutlineInputBorder(
                       borderSide:
-                          BorderSide(width: 2, color: Color(0xFFE0E0E0)),
+                      BorderSide(width: 2, color: Color(0xFFE0E0E0)),
                     ),
                   ),
                 ),
@@ -99,7 +103,7 @@ class RegistrationPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const MainPage(),
+                        builder: (context) => const CatalogPage(),
                       ),
                     );
                   },

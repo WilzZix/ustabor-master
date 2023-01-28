@@ -419,7 +419,6 @@ class _PromoPageState extends State<PromoPage> {
           ),
           Container(
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-            height: 92.h,
             width: 343.w,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:usta_bor_app/service/di.dart';
+import 'package:usta_bor_app/ui/pages/auth_page/auth_page.dart';
 import 'package:usta_bor_app/ui/pages/main_page/main_page.dart';
 
 void main() async {
@@ -11,8 +12,8 @@ void main() async {
 
   HttpOverrides.global = MyHttpOverrides();
   runApp(
-    MyApp(
-      homeWidget: home,
+    const MyApp(
+      homeWidget: AuthPage(),
     ),
   );
 }
@@ -40,9 +41,9 @@ class _MyAppState extends State<MyApp> {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: (BuildContext context, Widget? child) {
-        return const MaterialApp(
+        return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: MainPage(),
+          home: widget.homeWidget,
         );
       },
     );

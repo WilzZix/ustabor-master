@@ -35,7 +35,6 @@ class _WalletBasicState extends State<WalletBasic>
       child: Column(
         children: [
           Container(
-            height: 49.h,
             width: 343.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
@@ -45,32 +44,29 @@ class _WalletBasicState extends State<WalletBasic>
                 Padding(
                   padding: const EdgeInsets.only(top: 4, bottom: 4, left: 4),
                   child: TabBar(
-                    
                       indicatorWeight: 2,
                       indicator: BoxDecoration(
                           color: Color(0xffFFFFFFF),
                           borderRadius: BorderRadius.circular(5)),
                       unselectedLabelColor: Color(0xff4A4A4A).withOpacity(.5),
-                   labelColor: Color(0xff4A4A4A),
-                  // unselectedLabelColor: Colors.red,
+                      labelColor: Color(0xff4A4A4A),
+                      // unselectedLabelColor: Colors.red,
                       controller: _tabController,
                       tabs: [
                         Tab(
                             child: Text('Пополнение кошелька',
                                 style: TextStyle(
-                                 //   color: Color(0xff4A4A4A),
+                                    //   color: Color(0xff4A4A4A),
                                     fontSize: 12.sp,
                                     fontWeight: FontWeight.w600))),
                         Tab(
-                           child: Center(
+                            child: Center(
                           child: Text('История транзакций',
                               style: TextStyle(
-                                //  color: Color(0xff4A4A4A),
+                                  //  color: Color(0xff4A4A4A),
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w600)),
                         )),
-                          
-                        
                       ]),
                 )
               ],

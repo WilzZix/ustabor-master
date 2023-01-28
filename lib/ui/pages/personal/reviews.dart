@@ -46,6 +46,7 @@ class _ReviewsPageState extends State<ReviewsPage> {
           height: 24.h,
         ),
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               decoration: const BoxDecoration(
@@ -97,12 +98,15 @@ class _ReviewsPageState extends State<ReviewsPage> {
                     ),
                   ],
                 ),
-                SizedBox(height: 14.h,),
+                SizedBox(
+                  height: 14.h,
+                ),
                 Container(
-                  constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.7),
-                  child: Container(
-                    decoration: BoxDecoration(color: Colors.red),
-                    child: Text('Отличная компания! Уже который год сотрудничаем с ребятами, берем краски оптом. Все всегда высшего качества, и цены приятно радуют.')))
+                    constraints: BoxConstraints(
+                        maxWidth: MediaQuery.of(context).size.width * 0.7),
+                    child: Container(
+                        child: Text(
+                            'Отличная компания! Уже который год сотрудничаем с ребятами, берем краски оптом. Все всегда высшего качества, и цены приятно радуют.')))
               ],
             )
           ],

@@ -7,7 +7,7 @@ class InformationTabWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
+    return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Column(

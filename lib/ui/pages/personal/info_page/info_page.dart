@@ -35,19 +35,19 @@ class _InfoPageState extends State<InfoPage> {
     'Ванные комнаты',
     'Ванные комнаты',
   ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-        
-           Text('О мастере:',
+          Text('О мастере:',
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w700)),
-           SizedBox(
+          SizedBox(
             height: 18.h,
           ),
           Row(
@@ -57,19 +57,44 @@ class _InfoPageState extends State<InfoPage> {
                 height: 21.h,
                 width: 16.w,
               ),
-               SizedBox(
+              SizedBox(
                 width: 10.h,
               ),
-               Text('Узбекистан, Бухара',
+              Text('Узбекистан, Бухара',
                   style: TextStyle(
-                    color:  Color(0xff4A4A4A),
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400
-                  ))
+                      color: Color(0xff4A4A4A),
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400))
             ],
           ),
-           SizedBox(
-            height: 17.h
+          SizedBox(height: 17.h),
+          Row(
+            children: [
+              Container(
+                  height: 22.h,
+                  width: 19.w,
+                  decoration: BoxDecoration(
+                      color: Color(0xff2F2F2),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Center(
+                    child: Text(
+                      '10',
+                      style: TextStyle(
+                          fontSize: 12.sp, fontWeight: FontWeight.w600),
+                    ),
+                  )),
+              SizedBox(
+                width: 9.h,
+              ),
+              Text('просмотров профиля',
+                  style: TextStyle(
+                      color: Color(0xff4A4A4A),
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400))
+            ],
+          ),
+          SizedBox(
+            height: 9.h,
           ),
           Row(
             children: [
@@ -80,70 +105,45 @@ class _InfoPageState extends State<InfoPage> {
                       color: Color(0xff2F2F2),
                       borderRadius: BorderRadius.circular(10)),
                   child: Center(
-                    child: Text('10', style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w600),),
+                    child: Text(
+                      '10',
+                      style: TextStyle(
+                          fontSize: 12.sp, fontWeight: FontWeight.w600),
+                    ),
                   )),
               SizedBox(
-                width: 9.h,
-              ),
-              Text('просмотров профиля',
-                  style: TextStyle(
-                    color: Color(0xff4A4A4A),
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400
-                  ))
-            ],
-          ),
-         SizedBox(
-            height: 9.h,
-          ),
-          Row(
-            children: [
-                            Container(
-                  height: 22.h,
-                  width: 19.w,
-                  decoration: BoxDecoration(
-                      color: Color(0xff2F2F2),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Center(
-                    child: Text('10', style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w600),),
-                  )),
-               SizedBox(
                 width: 12.h,
               ),
               Text('запросов контакта',
                   style: TextStyle(
-                    color: Color(0xff4A4A4A),
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400
-                  ))
-             
+                      color: Color(0xff4A4A4A),
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400))
             ],
           ),
-           SizedBox(
+          SizedBox(
             height: 12.h,
           ),
-           Text(
+          Text(
               'Ремонт под ключ. Выполняю ремонт под ключ: ванная комната под ключ, отделка стен и потолка, поклейка обоев, кладка кафеля и др. Дизайн интерьера помещений, офисов и домов, кухня на заказ.',
               style: TextStyle(
-                color: Color(0xff4A4A4A),
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w400
-              )),
-           SizedBox(
+                  color: Color(0xff4A4A4A),
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w400)),
+          SizedBox(
             height: 24.h,
           ),
-         Text('Специализация:',
+          Text('Специализация:',
               style: TextStyle(
                   color: Color(0xff4A4A4A),
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w700)),
-           SizedBox(
+          SizedBox(
             height: 22.h,
           ),
-        
           Wrap(
-          direction: Axis.horizontal,
-           spacing: 8,
+            direction: Axis.horizontal,
+            spacing: 8,
             runSpacing: 8,
             // crossAxisAlignment: WrapCrossAlignment.end,
             // runAlignment: WrapAlignment.spaceBetween,
@@ -156,15 +156,15 @@ class _InfoPageState extends State<InfoPage> {
                         style: OutlinedButton.styleFrom(
                           elevation: 0,
                           backgroundColor: Color(0xffF2f2f2f2),
-                          shape:RoundedRectangleBorder(
-                              borderRadius:BorderRadius.circular(8)),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8)),
                         ),
                         child: Text(
                           skilsName[i],
-                          style: TextStyle(color: Color(0xff4A4A4A).withOpacity(.5),
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w600
-                          ),
+                          style: TextStyle(
+                              color: Color(0xff4A4A4A).withOpacity(.5),
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600),
                         ))
                     : AddButton()
             ],
@@ -173,24 +173,31 @@ class _InfoPageState extends State<InfoPage> {
             height: 16.h,
           ),
           GestureDetector(
-          onTap: (() {
-            setState(() {
-              isTrue= !isTrue;
-            });
-          }),
+            onTap: (() {
+              setState(() {
+                isTrue = !isTrue;
+              });
+            }),
             child: Row(
               children: [
-               isTrue? Text('Показать все',
-                    style: TextStyle(
-                        color: Color(0xff63C74D), fontWeight: FontWeight.w700, fontSize: 14.sp)):
-                        Text('Скрыть все',
-                    style: TextStyle(
-                        color: Color(0xff63C74D), fontWeight: FontWeight.w700, fontSize: 14.sp)),
+                isTrue
+                    ? Text('Показать все',
+                        style: TextStyle(
+                            color: Color(0xff63C74D),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14.sp))
+                    : Text('Скрыть все',
+                        style: TextStyle(
+                            color: Color(0xff63C74D),
+                            fontWeight: FontWeight.w700,
+                            fontSize: 14.sp)),
                 SizedBox(
                   width: 13.w,
                 ),
                 Icon(
-                isTrue?  Icons.arrow_right_outlined:Icons.arrow_drop_up_outlined,
+                  isTrue
+                      ? Icons.arrow_right_outlined
+                      : Icons.arrow_drop_up_outlined,
                   size: 20.h,
                   color: Color(0xff63C74D).withOpacity(.4),
                 )
@@ -203,8 +210,9 @@ class _InfoPageState extends State<InfoPage> {
           Text(
             'Услуги и цены:',
             style: TextStyle(
-              color: Color(0xff4A4A4A),
-              fontWeight: FontWeight.w700, fontSize: 14.sp),
+                color: Color(0xff4A4A4A),
+                fontWeight: FontWeight.w700,
+                fontSize: 14.sp),
           ),
           SizedBox(
             height: 16.h,
@@ -217,10 +225,15 @@ class _InfoPageState extends State<InfoPage> {
                 borderRadius: BorderRadius.circular(6)),
             child: Center(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
                 child: Text(
                   '☝️️  Только услуги с проставленными ценами будут видны заказчикам!',
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14.sp,   color: Color(0xff4A4A4A),),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14.sp,
+                    color: Color(0xff4A4A4A),
+                  ),
                 ),
               ),
             ),
@@ -238,122 +251,146 @@ class _InfoPageState extends State<InfoPage> {
                 child: Text(
               'Сантехники',
               style: TextStyle(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w600, color: Color(0xff4A4A4A).withOpacity(.5)),
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xff4A4A4A).withOpacity(.5)),
             )),
           ),
           SizedBox(
             height: 22.h,
           ),
-          Container(
-            child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 6,
-                scrollDirection: Axis.vertical,
-                itemBuilder: (BuildContext context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical:12 ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          height: 16.h,
-                          width: 16.w,
-                          child: Checkbox(
+          ListView.builder(
+              physics: const PageScrollPhysics(),
+              // new
+              shrinkWrap: true,
+              itemCount: 6,
+              scrollDirection: Axis.vertical,
+              itemBuilder: (BuildContext context, index) {
+                return Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 12, horizontal: 4),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        height: 16.h,
+                        width: 16.w,
+                        child: Checkbox(
                             activeColor: Color(0xff63C74D),
-                              value: isChecked,
-                              onChanged: ((bool? value) {
-                                setState(() {
-                                  isChecked = value!;
-                                });
-                              })),
-                        ),
-                        SizedBox(width:11.h,),
-                        Row(
-                          children: [
-                            Text('Развести трубы',
+                            value: isChecked,
+                            onChanged: ((bool? value) {
+                              setState(() {
+                                isChecked = value!;
+                              });
+                            })),
+                      ),
+                      SizedBox(
+                        width: 11.h,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Развести трубы',
                             style: TextStyle(
-                              color:  Color(0xff4A4A4A),
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w400
-                            ),),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        DottedLine(direction: Axis.horizontal, lineLength: 50),
-                        Row(
-                          children: [
-                            Text('от', style: TextStyle(
-                              color:  Color(0xff4A4A4A),
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w400
-                            ),),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            Container(
-                                height: 32.h,
-                                width: 81.w,
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                      border: OutlineInputBorder()),
-                                )),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            Text('сўм', style: TextStyle(
-                              color:  Color(0xff4A4A4A),
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w400
-                            ),)
-                          ],
-                        )
-                      ],
-                    ),
-                  );
-                }),
-          ),
+                                color: Color(0xff4A4A4A),
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      const DottedLine(
+                          direction: Axis.horizontal, lineLength: 50),
+                      Row(
+                        children: [
+                          Text(
+                            'от',
+                            style: TextStyle(
+                                color: Color(0xff4A4A4A),
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          SizedBox(
+                            width: 5.w,
+                          ),
+                          Container(
+                              height: 32.h,
+                              width: 81.w,
+                              child: const TextField(
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder()),
+                              )),
+                          SizedBox(
+                            width: 5.w,
+                          ),
+                          Text(
+                            'сўм',
+                            style: TextStyle(
+                                color: Color(0xff4A4A4A),
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w400),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                );
+              }),
           SizedBox(
             height: 32.h,
           ),
-          Text('Фото проектов:', style: TextStyle(color:Color(0xff4A4AA), fontWeight: FontWeight.w700, fontSize: 14.sp ),),
-          SizedBox(height: 16.h,),
+          Text(
+            'Фото проектов:',
+            style: TextStyle(
+                color: Color(0xff4A4AA),
+                fontWeight: FontWeight.w700,
+                fontSize: 14.sp),
+          ),
+          SizedBox(
+            height: 16.h,
+          ),
           Container(
             // decoration: BoxDecoration(color: Colors.red),
             child: Wrap(
               direction: Axis.horizontal,
-              spacing: 0,
-              runSpacing: 0,
+              spacing: 4,
+              runSpacing: 4,
               crossAxisAlignment: WrapCrossAlignment.end,
               runAlignment: WrapAlignment.spaceBetween,
               children: [
-                 for (int i = 0; i < images.length+1; i++)
-                 i < images.length ? 
-                Container(
-                  height: 112.h,
-                  width: 164.w,
-                  child: Image.asset(images[i]),
-                ): Container(
-                  height: 112.h,
-                  width: 164.w,
-                  decoration: BoxDecoration(
-                    border: Border.all(color:Color(0xff63C74D).withOpacity(.4),
-                    ),
-                    borderRadius: BorderRadius.circular(8)
-                  ),
-                  child: Center(child: Text('Смотреть все фото в галерее',
-                  style: TextStyle(
-                              color:  Color(0xff63C74D),
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w700
-                            ),
-                  )),
-                )
+                for (int i = 0; i < images.length + 1; i++)
+                  i < images.length
+                      ? Container(
+                          height: 112.h,
+                          width: 164.w,
+                          child: Image.asset(images[i]),
+                        )
+                      : Container(
+                          height: 112.h,
+                          width: 164.w,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Color(0xff63C74D).withOpacity(.4),
+                              ),
+                              borderRadius: BorderRadius.circular(8)),
+                          child: Text(
+                            'Смотреть все фото в галерее',
+                            style: TextStyle(
+                                color: Color(0xff63C74D),
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w700),
+                            textAlign: TextAlign.center,
+                          ),
+                        )
               ],
             ),
-          )
+          ),
+          SizedBox(
+            height: 16.h,
+          ),
         ]);
   }
 }

@@ -14,6 +14,7 @@ class Second_page extends StatefulWidget {
 class _Second_pageState extends State<Second_page>
     with SingleTickerProviderStateMixin {
   late TabController tapController;
+
   @override
   void initState() {
     tapController = TabController(length: 3, vsync: this);
@@ -30,36 +31,35 @@ class _Second_pageState extends State<Second_page>
           indicatorColor: Color(0xff63C74D),
           //labelColor: Colors.black,
           controller: tapController,
+          labelPadding: EdgeInsets.zero,
+          // isScrollable: true,
           tabs: [
             Tab(
-              child: Center(
-                  child: Text(
+              child: Text(
                 'Bce',
                 style: TextStyle(
                     color: Color(0xff4A4A4A),
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400),
-              )),
+              ),
             ),
             Tab(
-              child: Center(
-                  child: Text(
+              child: Text(
                 'Платежи',
                 style: TextStyle(
                     color: Color(0xff4A4A4A),
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400),
-              )),
+              ),
             ),
             Tab(
-              child: Center(
-                  child: Text(
+              child: Text(
                 'Пополнения',
                 style: TextStyle(
                     color: Color(0xff4A4A4A),
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400),
-              )),
+              ),
             ),
           ],
         ),
@@ -71,70 +71,57 @@ class _Second_pageState extends State<Second_page>
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        height: 48.h,
-                        width: 96.w,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Color(0xffE0E0E0)),
-                          //color: Colors.white,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Center(
-                            child: Text('18.02.2022',
-                                style: TextStyle(
-                                    color: Color(0xff4A4A4A),
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w400))),
-                      ),
-                      SizedBox(
-                        width: 4.w,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      Row(
                         children: [
                           Container(
+                            height: 48.h,
+                            padding: EdgeInsets.symmetric(horizontal: 12.w),
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Color(0xffE0E0E0)),
+                              //color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Center(
+                                child: Text('18.02.2022',
+                                    style: TextStyle(
+                                        color: Color(0xff4A4A4A),
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w400))),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 4.w),
+                            color: Color(0xffE0E0E0),
                             height: 2.h,
                             width: 6.w,
+                          ),
+                          Container(
+                            height: 48.h,
+                            padding: EdgeInsets.symmetric(horizontal: 12.w),
                             decoration: BoxDecoration(
-                                color: Color(0xffBDBDBD),
-                                borderRadius: BorderRadius.circular(1)),
+                              border: Border.all(color: Color(0xffE0E0E0)),
+                              //  color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Center(
+                                child: Text('18.02.2022',
+                                    style: TextStyle(
+                                        color: Color(0xff4A4A4A),
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w400))),
                           ),
                         ],
                       ),
-                      SizedBox(
-                        width: 4.w,
-                      ),
-                      Container(
-                        height: 48.h,
-                        width: 96.w,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Color(0xffE0E0E0)),
-                          //  color: Colors.white,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Center(
-                            child: Text('18.02.2022',
-                                style: TextStyle(
-                                    color: Color(0xff4A4A4A),
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w400))),
-                      ),
-                      SizedBox(
-                        width: 14.w,
-                      ),
                       Container(
                           height: 48.h,
-                          width: 123.w,
+                          padding: EdgeInsets.symmetric(horizontal: 12.w),
                           decoration: BoxDecoration(
                             border: Border.all(color: Color(0xffE0E0E0)),
-                            //   color: Colors.white,
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text(
                                 'По дате',
@@ -142,9 +129,6 @@ class _Second_pageState extends State<Second_page>
                                     color: Color(0xff4A4A4A),
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w400),
-                              ),
-                              SizedBox(
-                                width: 31.w,
                               ),
                               Icon(
                                 Icons.arrow_drop_down,
@@ -166,9 +150,8 @@ class _Second_pageState extends State<Second_page>
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         child: Container(
                           width: 343.w,
-                          height: 79.h,
                           decoration: BoxDecoration(
-                            color: Color(0xffF9F9F9),
+                            color: Color(0xffF6F6F6),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Column(
@@ -208,12 +191,14 @@ class _Second_pageState extends State<Second_page>
                                     width: 16.w,
                                   ),
                                   Container(
-                                      height: 16.h,
+                                      margin: EdgeInsets.symmetric(vertical: 8),
                                       width: 51.w,
                                       child: Image.network(
-                                        "https://turonbank.uz/bitrix/templates/main/images/cards/payments/payme.png",
+                                        "https://financialit.net/sites/default/files/payme.jg",
+                                        fit: BoxFit.cover,
                                         errorBuilder: (context, _, __) {
-                                          return Container();
+                                          return Image.asset(
+                                              'assets/payme.jpg');
                                         },
                                       )),
                                   SizedBox(

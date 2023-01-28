@@ -14,15 +14,24 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  int pageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
-    int pageIndex = 1;
     final pages = [CatalogPage(), CabinetPage()];
+    void onItemTap(int index) {
+      setState(() {
+        pageIndex = index;
+      });
+    }
 
     return SafeArea(
       child: Scaffold(
         body: pages[pageIndex],
-        bottomNavigationBar: const CustomBottomNavigationBar(),
+        bottomNavigationBar: CustomBottomNavigationBar(
+          onTap: onItemTap,
+          page: pageIndex,
+        ),
         resizeToAvoidBottomInset: false,
       ),
     );
@@ -30,7 +39,11 @@ class _MainPageState extends State<MainPage> {
 }
 
 class CustomBottomNavigationBar extends StatefulWidget {
-  const CustomBottomNavigationBar({super.key});
+  const CustomBottomNavigationBar(
+      {super.key, required this.onTap, required this.page});
+
+  final Function(int page) onTap;
+  final int page;
 
   @override
   State<CustomBottomNavigationBar> createState() =>
@@ -38,14 +51,6 @@ class CustomBottomNavigationBar extends StatefulWidget {
 }
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
-  int _selectedIndex = 2;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
@@ -58,33 +63,29 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           children: [
             Expanded(
               child: CustomBottomNavBarItem(
-                isActive: _selectedIndex == 0,
+                isActive: widget.page == 0,
                 activeIcon: 'assets/images/ic_personal.svg',
                 icon: 'assets/images/ic_personal.svg',
                 label: 'Кабинет',
                 onPressed: () {
-                  setState(() {
-                    _selectedIndex = 0;
-                  });
+                  widget.onTap(0);
                 },
               ),
             ),
             Expanded(
               child: CustomBottomNavBarItem(
-                isActive: _selectedIndex == 1,
                 activeIcon: 'assets/images/ic_zayavki.svg',
+                isActive: widget.page == 1,
                 icon: 'assets/images/ic_zayavki.svg',
                 label: 'Мои заявки',
                 onPressed: () {
-                  setState(() {
-                    _selectedIndex = 1;
-                  });
+                  widget.onTap(1);
                 },
               ),
             ),
             Expanded(
               child: CustomBottomNavBarItem(
-                isActive: _selectedIndex == 2,
+                isActive: widget.page == 2,
                 activeIcon: 'assets/images/subtract.svg',
                 icon: 'assets/images/subtract.svg',
                 label: "Каталог",
@@ -97,7 +98,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             ),
             Expanded(
               child: CustomBottomNavBarItem(
-                isActive: _selectedIndex == 3,
+                isActive: widget.page == 3,
                 activeIcon: 'assets/images/ic_mastera.svg',
                 icon: 'assets/images/ic_mastera.svg',
                 label: 'Меню',
