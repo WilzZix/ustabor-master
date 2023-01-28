@@ -340,7 +340,7 @@ class _CabinetPageState extends State<CabinetPage>
     return Expanded(
       child: Container(
         height: 40,
-        padding: EdgeInsets.symmetric(horizontal: 8),
+      //  padding: EdgeInsets.symmetric(horizontal: 8),
         margin: EdgeInsets.symmetric(vertical: 6),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
@@ -351,6 +351,7 @@ class _CabinetPageState extends State<CabinetPage>
             onTap: onTap,
             borderRadius: BorderRadius.circular(8),
             child: Row(children: [
+              SizedBox(width: 8.w,),
               SvgPicture.asset(svg, color: tapped ? Colors.green : Colors.grey),
               const SizedBox(width: 10),
               Text(title,
