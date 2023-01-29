@@ -80,8 +80,7 @@ Widget _textWidget(String txt) {
     style: TextStyle(color: A4, fontWeight: W400, fontSize: 22.sp),
   );
 }
-Widget _filedText( String? hintText) {
-  return Container(
+Widget _filedText( String? hintText) => Container(
     height: 48.h,
     width: 311.w,
     decoration: BoxDecoration(
@@ -96,8 +95,6 @@ Widget _filedText( String? hintText) {
           ),
         ),
   );
-  
-}
 Widget _button( ) {
   return Container(
     height: 48.h,
