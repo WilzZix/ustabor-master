@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:usta_bor_app/ui/pages/personal/menu/contants.dart';
 import 'package:usta_bor_app/ui/pages/personal/menu/edit_number_page.dart';
+import 'package:usta_bor_app/ui/pages/personal/menu/editnumber.dart';
 
 class EditPage extends StatefulWidget {
   const EditPage({super.key});
@@ -46,7 +47,7 @@ class _EditPageState extends State<EditPage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const EditNumberPgae()),
+                                  builder: (context) => const EditNumbers()),
                             );
                           }),
                           child: Text(
@@ -97,7 +98,13 @@ class _EditPageState extends State<EditPage> {
               ),
               Center(
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EditNumberPgae()),
+                    );
+                  },
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,

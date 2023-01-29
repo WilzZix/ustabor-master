@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:usta_bor_app/ui/pages/personal/menu/contants.dart';
 
-class EditNumberPgae extends StatefulWidget {
-  const EditNumberPgae({super.key});
+class EditNumbers extends StatefulWidget {
+  const EditNumbers({super.key});
 
   @override
-  State<EditNumberPgae> createState() => _EditNumberPgaeState();
+  State<EditNumbers> createState() => _EditNumbersState();
 }
 
-class _EditNumberPgaeState extends State<EditNumberPgae> {
+class _EditNumbersState extends State<EditNumbers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,15 +24,15 @@ class _EditNumberPgaeState extends State<EditNumberPgae> {
                 _clearButton(context),
               ],
             ),
-            Center(child: _textWidget('Изменение пароля')),
+            Center(child: _textWidget('Изменение номера')),
             SizedBox(
               height: 40.h,
             ),
-            _filedText('Введите текущий пароль'),
+            _filedText('Введите новый номер телефона'),
             SizedBox(height: 16.h,),
-            _filedText('Введите новый пароль'),
-              SizedBox(height: 16.h,),
-            _filedText('Повторно введите новый пароль'),
+            _filedText('Код из СМС'),
+
+            
             SizedBox(height: 24.h,),
             _button(),
             SizedBox(height: 24.h,),
@@ -132,3 +132,4 @@ Widget _button( ) {
     ),
   );
  }
+ 
