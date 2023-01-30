@@ -14,70 +14,72 @@ class _FeedbackPageState extends State<FeedbackPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _clearButton(context),
-              ],
-            ),
-            Center(child: _textWidget('Оценка заказчика')),
-            SizedBox(
-              height: 36.h,
-            ),
-            _textName('Виктор Ермоленко'),
-            SizedBox(
-              height: 27.h,
-            ),
-            RatingBar.builder(
-              initialRating: 0,
-              itemSize: 30,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: false,
-              itemCount: 5,
-              itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-              itemBuilder: (context, _) => const Icon(
-                Icons.star,
-                color: Colors.amber,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+          child: Column(
+           crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _clearButton(context),
+                ],
               ),
-              onRatingUpdate: (rating) {
-                print(rating);
-              },
-            ),
-            SizedBox(
-              height: 32.h,
-            ),
-            _textName('Отзыв о заказчике'),
-            SizedBox(
-              height: 8.h,
-            ),
-            _filedText('Добавьте коментарий о заказе'),
-            SizedBox(
-              height: 20.h,
-            ),
-            _textName('Пожалуйста укажите стоимость услуг'),
-            SizedBox(
-              height: 8.h,
-            ),
-            _filedType('Стоимость услуг'),
-            SizedBox(
-              height: 24.h,
-            ),
-            _textName('Коментарий'),
-            SizedBox(
-              height: 8.h,
-            ),
-            _filedText('Как мы можем стать лучше?'),
-            SizedBox(
-              height: 30.h,
-            ),
-            InkWell(onTap: () {}, child: _button('Отправить отзыв'))
-          ],
+              Center(child: _textWidget('Оценка заказчика')),
+              SizedBox(
+                height: 36.h,
+              ),
+              _textName('Виктор Ермоленко'),
+              SizedBox(
+                height: 27.h,
+              ),
+              RatingBar.builder(
+                initialRating: 0,
+                itemSize: 30,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: false,
+                itemCount: 5,
+                itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                itemBuilder: (context, _) => const Icon(
+                  Icons.star,
+                  color: Colors.amber,
+                ),
+                onRatingUpdate: (rating) {
+                  print(rating);
+                },
+              ),
+              SizedBox(
+                height: 32.h,
+              ),
+              _textName('Отзыв о заказчике'),
+              SizedBox(
+                height: 8.h,
+              ),
+              _filedText('Добавьте коментарий о заказе'),
+              SizedBox(
+                height: 20.h,
+              ),
+              _textName('Пожалуйста укажите стоимость услуг'),
+              SizedBox(
+                height: 8.h,
+              ),
+              _filedType('Стоимость услуг'),
+              SizedBox(
+                height: 24.h,
+              ),
+              _textName('Коментарий'),
+              SizedBox(
+                height: 8.h,
+              ),
+              _filedText('Как мы можем стать лучше?'),
+              SizedBox(
+                height: 30.h,
+              ),
+              InkWell(onTap: () {}, child: _button('Отправить отзыв'))
+            ],
+          ),
         ),
       ),
     );
@@ -127,16 +129,21 @@ Widget _textName(String txt) {
 }
 
 Widget _button(String text) {
-  return Container(
-    height: 48.h,
-    decoration: BoxDecoration(
-        boxShadow: [], color: Green, borderRadius: BorderRadius.circular(8)),
-    child: Center(
-        child: Text(text,
-            style: TextStyle(
-                color: Color(0xffffffff),
-                fontWeight: FontWeight.w500,
-                fontSize: 12.sp))),
+  return InkWell(
+    onTap: () {
+      
+    },
+    child: Container(
+      height: 48.h,
+      decoration: BoxDecoration(
+          boxShadow: [], color: Green, borderRadius: BorderRadius.circular(8)),
+      child: Center(
+          child: Text(text,
+              style: TextStyle(
+                  color: Color(0xffffffff),
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12.sp))),
+    ),
   );
 }
 
@@ -152,7 +159,7 @@ Widget _filedText(String? hintText) => Container(
         maxLines: 4,
         //  minLines: 1,
         decoration: InputDecoration(
-          hintStyle: TextStyle(color: A4.withOpacity(.5)),
+          hintStyle: TextStyle(color: A4.withOpacity(.5), fontWeight: W400, fontSize: 14.sp),
           hintText: hintText,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
         ),
@@ -161,13 +168,13 @@ Widget _filedText(String? hintText) => Container(
 Widget _filedType(String? hintText) => Container(
       //  height: 48.h,
       decoration: BoxDecoration(
-          border: Border.all(
-            color: Color(0xffE0E0E0),
-          ),
+       
           borderRadius: BorderRadius.circular(8)),
       child: TextField(
         decoration: InputDecoration(
-          hintStyle: TextStyle(color: A4.withOpacity(.5)),
+        
+         hintStyle: TextStyle(color: A4.withOpacity(.5), fontWeight: W400, fontSize: 14.sp),
+        
           hintText: hintText,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
         ),

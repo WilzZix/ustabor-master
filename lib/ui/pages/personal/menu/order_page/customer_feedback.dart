@@ -16,7 +16,6 @@ class _CustomerFeedbackState extends State<CustomerFeedback> {
     return InkWell(
         onTap: (() {
           showModalBottomSheet(
-              // constraints: BoxConstraints(minHeight: 700),
               shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.vertical(top: Radius.circular(8))),
               isScrollControlled: true,
@@ -28,8 +27,7 @@ class _CustomerFeedbackState extends State<CustomerFeedback> {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
+                
                         children: [
                           SizedBox(
                             height: 8.h,
@@ -90,12 +88,24 @@ class _CustomerFeedbackState extends State<CustomerFeedback> {
                           SizedBox(
                             height: 159.h,
                           ),
-                          _textName('Дополнительный комментарий'),
-                          SizedBox(height: 8.h,),
-                          _filedText('Добавьте комментарий, он также отобразится в профиле клинета'),
-                          SizedBox(height: 32.h,),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              _textName('Дополнительный комментарий'),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 8.h,
+                          ),
+                          _filedText(
+                              'Добавьте комментарий, он также отобразится в профиле клинета'),
+                          SizedBox(
+                            height: 32.h,
+                          ),
                           _button(),
-                          SizedBox(height: 48.h,),
+                          SizedBox(
+                            height: 48.h,
+                          ),
                           _bottomText()
                         ],
                       ),
@@ -145,7 +155,7 @@ Widget _conatiner(String text) {
 Widget _button() {
   return Container(
     height: 48.h,
-    // width: 343.w,
+    
     decoration: BoxDecoration(
         color: Color(0xff63C74D), borderRadius: BorderRadius.circular(8)),
     child: Center(
@@ -237,19 +247,15 @@ Widget _textName(String txt) {
     style: TextStyle(color: A4, fontWeight: W400, fontSize: 12.sp),
   );
 }
+
 Widget _filedText(String? hintText) => Container(
-      //  height: 48.h,
-      decoration: BoxDecoration(
-          // border: Border.all(
-          //   color: Color(0xffE0E0E0),
-          // ),
-          borderRadius: BorderRadius.circular(8)),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
       child: TextField(
         keyboardType: TextInputType.multiline,
         maxLines: 5,
         //  minLines: 1,
         decoration: InputDecoration(
-          hintStyle: TextStyle(color: A4.withOpacity(.5)),
+          hintStyle: TextStyle(color: A4.withOpacity(.5), fontWeight: W400),
           hintText: hintText,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
         ),

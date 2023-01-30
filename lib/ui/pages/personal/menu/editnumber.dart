@@ -85,12 +85,15 @@ Widget _filedText( String? hintText) {
     height: 48.h,
     width: 311.w,
     decoration: BoxDecoration(
-        border: Border.all(
-          color: Color(0xffE0E0E0),
-        ),
+     
         borderRadius: BorderRadius.circular(8)),
         child: TextField(
           decoration: InputDecoration(
+                        hintStyle: TextStyle(
+              color: A4.withOpacity(.5),
+              fontWeight: W400,
+              fontSize: 14.sp
+            ),
             hintText: hintText,
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
           ),
@@ -99,21 +102,26 @@ Widget _filedText( String? hintText) {
   
 }
 Widget _button( ) {
-  return Container(
-    height: 48.h,
-    width: 311.w,
-    decoration: BoxDecoration(
-        color: Color(0xffE0E0E0,),
+  return InkWell(
+    onTap: (() {
       
-        borderRadius: BorderRadius.circular(8)),
-        child: Center(
-          child: Text('Войти',
-          style: TextStyle(
-            color: Color(0xffffffff,),
-            fontWeight: W600
-, fontSize: 14.sp
-          ),),
-        )
+    }),
+    child: Container(
+      height: 48.h,
+      width: 311.w,
+      decoration: BoxDecoration(
+          color: Color(0xffE0E0E0,),
+        
+          borderRadius: BorderRadius.circular(8)),
+          child: Center(
+            child: Text('Войти',
+            style: TextStyle(
+              color: Color(0xffffffff,),
+              fontWeight: W600
+  , fontSize: 14.sp
+            ),),
+          )
+    ),
   );
   
 }

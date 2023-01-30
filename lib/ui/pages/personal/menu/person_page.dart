@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:usta_bor_app/ui/pages/personal/menu/card_order.dart';
 import 'package:usta_bor_app/ui/pages/personal/menu/edit.dart';
 import 'package:usta_bor_app/ui/pages/personal/menu/exit.dart';
 import 'package:usta_bor_app/ui/pages/personal/menu/order_page/order_page.dart';
@@ -197,7 +198,10 @@ class _PersonPafeState extends State<PersonPafe> {
                   ),
                   InkWell(
                     onTap: (() {
-                      
+                        Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const CardOrder()));
                     }),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:usta_bor_app/ui/pages/personal/menu/contants.dart';
+import 'package:usta_bor_app/ui/pages/personal/menu/order_page/applications/order_id_page.dart';
 import 'package:usta_bor_app/ui/pages/personal/menu/order_page/customer_feedback.dart';
 import 'package:usta_bor_app/ui/pages/personal/menu/order_page/feedback_page.dart';
 
@@ -38,7 +39,12 @@ class _OrderPageState extends State<OrderPage> {
             Row(
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const OrderIdPage()));
+                  },
                   child:
                       Flexible(flex: 1, child: _conatiner('Заявка ID 35 886')),
                 ),
