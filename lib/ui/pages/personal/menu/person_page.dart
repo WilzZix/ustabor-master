@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:usta_bor_app/ui/pages/personal/menu/card_order.dart';
 import 'package:usta_bor_app/ui/pages/personal/menu/edit.dart';
 import 'package:usta_bor_app/ui/pages/personal/menu/exit.dart';
+import 'package:usta_bor_app/ui/pages/personal/menu/order_page/order_page.dart';
 
 class PersonPafe extends StatefulWidget {
   const PersonPafe({super.key});
@@ -115,129 +117,155 @@ class _PersonPafeState extends State<PersonPafe> {
               ),
               Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Image.asset(
-                            'assets/question.png',
-                            fit: BoxFit.contain,
-                            width: 24.w,
-                            height: 24.h,
-                          ),
-                          SizedBox(
-                            width: 18.w,
-                          ),
-                          Text(
-                            'Как найти клиентов',
-                            style: TextStyle(
-                                color: Color(0xff4A4A4A),
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14.sp),
-                          ),
-                        ],
-                      ),
-                      Icon(
-                        Icons.arrow_right_outlined,
-                        size: 26,
-                        color: Color(0xff4A4A4A).withOpacity(.3),
-                      )
-                    ],
+                  InkWell(
+                    onTap: (){
+                      
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/question.png',
+                              fit: BoxFit.contain,
+                              width: 24.w,
+                              height: 24.h,
+                            ),
+                            SizedBox(
+                              width: 18.w,
+                            ),
+                            Text(
+                              'Как найти клиентов',
+                              style: TextStyle(
+                                  color: Color(0xff4A4A4A),
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14.sp),
+                            ),
+                          ],
+                        ),
+                        Icon(
+                          Icons.arrow_right_outlined,
+                          size: 26,
+                          color: Color(0xff4A4A4A).withOpacity(.3),
+                        )
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 26.h,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Image.asset(
-                            'assets/master.png',
-                            fit: BoxFit.contain,
-                            width: 24.w,
-                            height: 24.h,
-                          ),
-                          SizedBox(
-                            width: 18.w,
-                          ),
-                          Text(
-                            'Мои заказчики',
-                            style: TextStyle(
-                                color: Color(0xff4A4A4A),
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14.sp),
-                          ),
-                        ],
-                      ),
-                      Icon(
-                        Icons.arrow_right_outlined,
-                        size: 26,
-                        color: Color(0xff4A4A4A).withOpacity(.3),
-                      )
-                    ],
+                  InkWell(
+                    onTap: (() {
+                        Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const OrderPage()));
+                    }),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/master.png',
+                              fit: BoxFit.contain,
+                              width: 24.w,
+                              height: 24.h,
+                            ),
+                            SizedBox(
+                              width: 18.w,
+                            ),
+                            Text(
+                              'Мои заказчики',
+                              style: TextStyle(
+                                  color: Color(0xff4A4A4A),
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14.sp),
+                            ),
+                          ],
+                        ),
+                        Icon(
+                          Icons.arrow_right_outlined,
+                          size: 26,
+                          color: Color(0xff4A4A4A).withOpacity(.3),
+                        )
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 26.h,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Image.asset(
-                            'assets/menu.png',
-                            fit: BoxFit.contain,
-                            width: 24.w,
-                            height: 24.h,
-                          ),
-                          SizedBox(
-                            width: 18.w,
-                          ),
-                          Text(
-                            'Мои заявки',
-                            style: TextStyle(
-                                color: Color(0xff4A4A4A),
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14.sp),
-                          ),
-                        ],
-                      ),
-                      Icon(
-                        Icons.arrow_right_outlined,
-                        size: 26,
-                        color: Color(0xff4A4A4A).withOpacity(.3),
-                      )
-                    ],
+                  InkWell(
+                    onTap: (() {
+                        Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const CardOrder()));
+                    }),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/menu.png',
+                              fit: BoxFit.contain,
+                              width: 24.w,
+                              height: 24.h,
+                            ),
+                            SizedBox(
+                              width: 18.w,
+                            ),
+                            Text(
+                              'Мои заявки',
+                              style: TextStyle(
+                                  color: Color(0xff4A4A4A),
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14.sp),
+                            ),
+                          ],
+                        ),
+                        Icon(
+                          Icons.arrow_right_outlined,
+                          size: 26,
+                          color: Color(0xff4A4A4A).withOpacity(.3),
+                        )
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 26.h,
                   ),
-                  Row(
-                    children: [
-                      Image.asset(
-                        'assets/rus.png',
-                        fit: BoxFit.contain,
-                        width: 24.w,
-                        height: 24.h,
-                      ),
-                      SizedBox(
-                        width: 18.w,
-                      ),
-                      Text(
-                        'Русский',
-                        style: TextStyle(
-                            color: Color(0xff4A4A4A),
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14.sp),
-                      ),
-                      Icon(
-                        Icons.arrow_drop_down_outlined,
-                        size: 26,
-                        color: Color(0xff4A4A4A).withOpacity(.3),
-                      )
-                    ],
+                  InkWell(
+                    onTap: (() {
+                      
+                    }),
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          'assets/rus.png',
+                          fit: BoxFit.contain,
+                          width: 24.w,
+                          height: 24.h,
+                        ),
+                        SizedBox(
+                          width: 18.w,
+                        ),
+                        Text(
+                          'Русский',
+                          style: TextStyle(
+                              color: Color(0xff4A4A4A),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14.sp),
+                        ),
+                        Icon(
+                          Icons.arrow_drop_down_outlined,
+                          size: 26,
+                          color: Color(0xff4A4A4A).withOpacity(.3),
+                        )
+                      ],
+                    ),
                   )
                 ],
               )

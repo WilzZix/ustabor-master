@@ -2,44 +2,42 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:usta_bor_app/ui/pages/personal/menu/contants.dart';
 
-class EditNumberPgae extends StatefulWidget {
-  const EditNumberPgae({super.key});
+class EditNumbers extends StatefulWidget {
+  const EditNumbers({super.key});
 
   @override
-  State<EditNumberPgae> createState() => _EditNumberPgaeState();
+  State<EditNumbers> createState() => _EditNumbersState();
 }
 
-class _EditNumberPgaeState extends State<EditNumberPgae> {
+class _EditNumbersState extends State<EditNumbers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
-          child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _clearButton(context),
-                ],
-              ),
-              Center(child: _textWidget('Изменение пароля')),
-              SizedBox(
-                height: 40.h,
-              ),
-              _filedText('Введите текущий пароль'),
-              SizedBox(height: 16.h,),
-              _filedText('Введите новый пароль'),
-                SizedBox(height: 16.h,),
-              _filedText('Повторно введите новый пароль'),
-              SizedBox(height: 24.h,),
-              _button(),
-              SizedBox(height: 24.h,),
-              _paswwordTxt()
-            ],
-          ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+        child: Column(
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _clearButton(context),
+              ],
+            ),
+            Center(child: _textWidget('Изменение номера')),
+            SizedBox(
+              height: 40.h,
+            ),
+            _filedText('Введите новый номер телефона'),
+            SizedBox(height: 16.h,),
+            _filedText('Код из СМС'),
+
+            
+            SizedBox(height: 24.h,),
+            _button(),
+            SizedBox(height: 24.h,),
+            _paswwordTxt()
+          ],
         ),
       ),
     );
@@ -82,15 +80,16 @@ Widget _textWidget(String txt) {
     style: TextStyle(color: A4, fontWeight: W400, fontSize: 22.sp),
   );
 }
-Widget _filedText( String? hintText) => Container(
+Widget _filedText( String? hintText) {
+  return Container(
     height: 48.h,
     width: 311.w,
     decoration: BoxDecoration(
-       
+     
         borderRadius: BorderRadius.circular(8)),
         child: TextField(
           decoration: InputDecoration(
-            hintStyle: TextStyle(
+                        hintStyle: TextStyle(
               color: A4.withOpacity(.5),
               fontWeight: W400,
               fontSize: 14.sp
@@ -100,6 +99,8 @@ Widget _filedText( String? hintText) => Container(
           ),
         ),
   );
+  
+}
 Widget _button( ) {
   return InkWell(
     onTap: (() {
@@ -139,3 +140,4 @@ Widget _button( ) {
     ),
   );
  }
+ 
